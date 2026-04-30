@@ -3,20 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> O Dispertar da Aura-7</title>
+    <title> O Protocolo Z: Sobrevivência em Aura-7</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
+        <div class="overlay"></div>
+        
+        <header>
+            <h1>PROTOCOLO Z</h1>
+            <div class="subtitle">Localidade: Aura-7</div>
+        </header>
         <div class="passo ativo" id="passo-0">
-            <p>O Terminal ao seu lado brilha em vermelho. Você pode tentar hackear o sistema para obter informações ou correr direto para a eclusa de ar.</p>
-            <button class="btnproximo" data-proximo="1">HACKEAR:Você descobre o que houve um vazamento biologico, mas perde tempo precioso.</button>
-            <button class="btnproximo" data-proximo="2">Correr:Você  ganha tempo, mas entra no corredor sem saber o que espera</button>
+            <p>Você acorda em um hospital de campanha. O cheiro de antisséptico é sufocante e há marcas de sangue nas paredes. Pela janela, você vê a cidade em chamas; pelo corredor, ouve passos arrastados e gemidos guturais. </p>
+            <button class="btnproximo" data-proximo="1">Sair pela janela usando lençóis amarrados como corda. (Vá para 2)</button>
+            <button class="btnproximo" data-proximo="2">Armar-se com um suporte de soro e sair pelo corredor. (Vá para 3)</button>
         </div>
-        <div class="passo" id="passo-1">
-            <p>`À esquerda, as luzes piscam (setor residencial). À direita, está tudo escuro (setor de carga)</p>
-            <button class="btnproximo" data-proximo="3">Residencial: Você encontra um kit médico, mas o caminho é obstruido por escombros.</button>
-            <button class="btnproximo" data-proximo="4">Carga: Você encontra uma lanterna, mas ouve algo se movendo nas sombras</button>
+        <div class="passo ativo" id="passo-1">
+            <p>Você desce, mas os lençóis rasgam. Você cai em um beco, torcendo o tornozelo. Uma caminhonete blindada de sobreviventes para à sua frente. Eles parecem nervosos e armados.</p>
+            <button class="btnproximo" data-proximo="3">Gritar por socorro e tentar subir na caçamba. (Vá para 4)</button>
+            <button class="btnproximo" data-proximo="4">Esconder-se atrás das caçambas de lixo e deixar que passem. (Vá para 5)</button>
+        </div>
+        <div class="passo ativo" id="passo-2">
+            <p>No corredor, um enfermeiro zumbificado bloqueia a saída. Atrás dele, há um kit médico intacto, mas o barulho da luta pode atrair uma horda que está na escadaria.</p>
+            <button class="btnproximo" data-proximo="5">Lutar contra o enfermeiro para pegar os suprimentos médicos. (Vá para 6)</button>
+            <button class="btnproximo" data-proximo="6">Fugir silenciosamente pela porta corta-fogo, ignorando os suprimentos. (Vá para 7)</button>
+        </div>
+        <div class="passo ativo" id="passo-3">
+            <p>O grupo te aceita, liderado por uma mulher chamada Ricka. Eles estão indo para uma base militar, mas a estrada principal está bloqueada por um engavetamento massivo de carros.</p>
+            <button class="btnproximo" data-proximo="7">Sugerir que todos desçam para empurrar os carros e abrir caminho. (Vá para 8)</button>
+            <button class="btnproximo" data-proximo="8">Pegar um desvio perigoso por uma estrada de terra na floresta. (Vá para 9)</button>
+        </div>
+        <div class="passo ativo" id="passo-4">
+            <p>Sozinho e ferido, você encontra uma loja de conveniência. As portas estão barricadas por dentro, sugerindo que há alguém vivo — ou algo preso — lá dentro.</p>
+            <button class="btnproximo" data-proximo="9">Bater na porta e implorar por abrigo. (Vá para 10)</button>
+            <button class="btnproximo" data-proximo="10">Tentar forçar a entrada pelo teto para não ser visto. (Vá para 11)</button>
+        </div>
+        <div class="passo ativo" id="passo-5">
+            <p>Você abate o zumbi, mas o barulho ecoa. Você consegue os antibióticos, mas a horda te cerca. Sua única saída é pular no duto de lixo, sem saber onde ele termina.</p>
+            <button class="btnproximo" data-proximo="11">Pular no duto de lixo com os suprimentos. (Vá para 12)</button>
+            <button class="btnproximo" data-proximo="12">Tentar subir para o telhado e sinalizar para o helicóptero que passa. (Vá para 13)</button>
+        </div>
+        <div class="passo ativo" id="passo-6">
+            <p>Após meses de sobrevivência, você chega à Grande Antena de Aura-7. O local é o ponto mais alto da região e possui sinal para alcançar os navios de resgate no oceano. Porém, você descobre que o sinal de rádio está sendo bloqueado por um dispositivo de segurança ativado por um cientista que enlouqueceu lá dentro. A antena está cercada por milhares de mortos-vivos e o tempo para o último resgate está acabando.</p>
+            <button class="btnproximo" data-proximo="13">Sobrecarregar o sistema de energia da antena para emitir um pulso eletromagnético. Isso enviará o sinal de socorro instantaneamente, mas causará uma explosão que destruirá a base e você junto com ela. (Vá para o Final 21)</button>
+            <button class="btnproximo" data-proximo="14">Tentar invadir a sala de controle manualmente para desligar o bloqueio. É mais seguro para você, mas levará tempo, e você terá que decidir se usa as últimas balas para se proteger ou para proteger um grupo de órfãos que você encontrou no caminho e que não conseguem subir a torre rápido o suficiente. (Vá para o Final 22)
+
+                Desfechos Finais</button>
         </div>
     </main>
 </body>
