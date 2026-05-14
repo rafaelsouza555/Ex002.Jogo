@@ -1,8 +1,10 @@
-/* Configurações Gerais */
-body {
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS (INTERFACE/TELA)
+   ========================================================================== */
+   body {
     background-color: #0a0a0a;
     color: #e0e0e0;
-    font-family: 'Courier New', Courier, monospace; /* Fonte tipo máquina de escrever */
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Efeito de sobreposição (sujeira/fumaça) */
+/* Efeito de sobreposição (Vignette) */
 .overlay {
     position: fixed;
     top: 0;
@@ -20,6 +22,7 @@ body {
     height: 100%;
     background: radial-gradient(circle, transparent 30%, black 150%);
     pointer-events: none;
+    z-index: 10;
 }
 
 main {
@@ -29,50 +32,47 @@ main {
     z-index: 1;
 }
 
-/* Títulos */
 header h1 {
-    font-size: 3rem;
-    color: #bc0000; /* Vermelho sangue */
+    font-size: 2.5rem;
+    color: #bc0000;
     text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
     margin-bottom: 5px;
     letter-spacing: 5px;
 }
 
 .subtitle {
-    font-size: 0.9rem;
-    color: #4caf50; /* Verde radar/militar */
+    font-size: 0.8rem;
+    color: #4caf50;
     text-transform: uppercase;
     margin-bottom: 40px;
 }
 
-/* Esconder os passos por padrão */
+/* --- LÓGICA DE EXIBIÇÃO INTERATIVA --- */
 .passo {
-    display: none;
+    display: none; /* Esconde todos para o sistema de navegação */
 }
 
-/* Mostrar apenas o passo ativo */
 .passo.passo_ativo {
-    display: block;
+    display: block; /* Mostra apenas o atual no navegador */
     animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Texto da História */
 p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 30px;
-    background: rgba(20, 20, 20, 0.8);
+    background: rgba(20, 20, 20, 0.9);
     padding: 20px;
     border-left: 4px solid #bc0000;
 }
 
-/* Botões de Escolha */
-.btnproximo {
+/* Botões */
+.btnproximo, .btnvoltar {
     background-color: transparent;
     color: #e0e0e0;
     border: 1px solid #444;
     padding: 15px 25px;
-    margin: 10px;
+    margin: 10px 0;
     cursor: pointer;
     font-family: inherit;
     font-size: 1rem;
@@ -89,22 +89,58 @@ p {
     transform: scale(1.02);
 }
 
-/* Animação de entrada */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
-/* Botões de voltar */
-.btnvoltar {
-    background-color: transparent;
-    color: #e0e0e0;
-    border: 1px solid #444;
-    padding: 15px 25px;
-    margin: 10px;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    width: 100%;
-    display: block;
+
+/* ==========================================================================
+   CONFIGURAÇÕES DE IMPRESSÃO (UMA DIV POR PÁGINA)
+   ========================================================================== */
+@media print {
+    /* Reseta o layout flexível para fluxo vertical simples */
+    body {
+        display: block !important;
+        background-color: white !important;
+        color: black !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Força todos os passos a aparecerem e quebrarem a página */
+    .passo {
+        display: block !important; /* Ignora o display:none do JS */
+        break-after: page;        /* Padrão Moderno */
+        page-break-after: always; /* Compatibilidade Legada */
+        
+        min-height: 100vh;
+        padding: 2cm;
+        box-sizing: border-box;
+        border: none;
+    }
+
+    /* Esconde elementos de interface que não pertencem ao papel */
+    .overlay, .btnproximo, .btnvoltar {
+        display: none !important;
+    }
+
+    /* Ajuste de tipografia para leitura em papel */
+    p {
+        background: transparent !important;
+        color: black !important;
+        border-left: 3pt solid #bc0000;
+        font-size: 12pt;
+    }
+
+    header h1 {
+        color: black !important;
+        text-shadow: none !important;
+        font-size: 24pt;
+    }
+
+    /* Configuração da folha */
+    @page {
+        size: auto;
+        margin: 1.5cm;
+    }
 }

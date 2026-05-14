@@ -1,77 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Quiz de Programação: Fundamentos & Lógica</title>
+    <title>Quiz de Programação: Fundamentos & Lógica</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Efeito visual de fundo -->
+    <div class="overlay"></div>
+
     <main>
-        <div class="overlay"></div>
-        
         <header>
-            <h1>Quiz de Programação: Fundamentos & Lógica</h1>
-            <div class="subtitle"> faça um teste de seu conhecimento sobre Programação</div>
+            <h1>Quiz de Programação</h1>
+            <div class="subtitle">Teste seu conhecimento sobre Programação</div>
         </header>
-        
-        <div class="passo_ativo" id="passo-0">
-            <p> 1. Qual destas estruturas é utilizada para repetir um código enquanto uma condição for verdadeira?</p>
 
-            <button class="btnvoltar" data-anterior="0">Voltar</button>
-
+        <!-- PASSO 0 (INICIAL) -->
+        <div class="passo passo_ativo" id="passo-0">
+            <p>1. Qual destas estruturas é utilizada para repetir um código enquanto uma condição for verdadeira?</p>
+            
+            <!-- Como é a primeira, o botão voltar pode ser omitido ou levar a um estado inicial -->
             <button class="btnproximo" data-proximo="1">A) If</button>
-            <button class="btnproximo" data-proximo="2"> B) While</button>
+            <button class="btnproximo" data-proximo="1">B) While</button>
         </div>
+
+        <!-- PASSO 1 -->
         <div class="passo" id="passo-1">
-            <p>Na linguagem Python, como se define uma função?</p>
-
+            <p>2. Na linguagem Python, como se define uma função?</p>
+            
             <button class="btnvoltar" data-anterior="0">Voltar</button>
-
-            <button class="btnproximo" data-proximo="3">A) def minha_funcao():</button>
-            <button class="btnproximo" data-proximo="4">B) function minhaFuncao()</button>
+            <button class="btnproximo" data-proximo="2">A) def minha_funcao():</button>
+            <button class="btnproximo" data-proximo="2">B) function minhaFuncao()</button>
         </div>
+
+        <!-- PASSO 2 -->
         <div class="passo" id="passo-2">
-            <p>Qual símbolo é usado para atribuir um valor a uma variável na maioria das linguagens?</p>
+            <p>3. Qual símbolo é usado para atribuir um valor a uma variável na maioria das linguagens?</p>
 
-            <button class="btnvoltar" data-anterior="0">Voltar</button>
-
-            <button class="btnproximo" data-proximo="5">A) ==</button>
-            <button class="btnproximo" data-proximo="6">B) =</button>
+            <button class="btnvoltar" data-anterior="1">Voltar</button>
+            <button class="btnproximo" data-proximo="3">A) ==</button>
+            <button class="btnproximo" data-proximo="3">B) =</button>
         </div>
+
+        <!-- PASSO 3 -->
         <div class="passo" id="passo-3">
-            <p>O que significa a sigla HTML no desenvolvimento web?</p>
+            <p>4. O que significa a sigla HTML no desenvolvimento web?</p>
 
-            <button class="btnvoltar" data-anterior="0">Voltar</button>
-
-            <button class="btnproximo" data-proximo="7">A) HyperText Markup Language</button>
-            <button class="btnproximo" data-proximo="8">B) High Tech Modern Language</button>
+            <button class="btnvoltar" data-anterior="2">Voltar</button>
+            <button class="btnproximo" data-proximo="4">A) HyperText Markup Language</button>
+            <button class="btnproximo" data-proximo="4">B) High Tech Modern Language</button>
         </div>
-        <div class="passo_ativo" id="passo-4">
+
+        <!-- PASSO 4 -->
+        <div class="passo" id="passo-4">
             <p>5. Em lógica, o que retorna a expressão booleana (True AND False)?</p>
 
-            <button class="btnvoltar" data-anterior="0">Voltar</button>
-
-            <button class="btnproximo" data-proximo="9">A) True</button>
-            <button class="btnproximo" data-proximo="10">B) False</button>
+            <button class="btnvoltar" data-anterior="3">Voltar</button>
+            <button class="btnproximo" data-proximo="5">A) True</button>
+            <button class="btnproximo" data-proximo="5">B) False</button>
         </div>
+
+        <!-- PASSO 5 -->
         <div class="passo" id="passo-5">
-            <p>Qual é o índice do primeiro elemento em um Array na maioria das linguagens modernas?</p>
+            <p>6. Qual é o índice do primeiro elemento em um Array na maioria das linguagens modernas?</p>
 
-            <button class="btnvoltar" data-anterior="0">Voltar</button>
-
-            <button class="btnproximo" data-proximo="11">A) 0</button>
-            <button class="btnproximo" data-proximo="12">B) 1</button>
+            <button class="btnvoltar" data-anterior="4">Voltar</button>
+            <button class="btnproximo" data-proximo="6">A) 0</button>
+            <button class="btnproximo" data-proximo="6">B) 1</button>
         </div>
+
+        <!-- PASSO 6 -->
         <div class="passo" id="passo-6">
             <p>7. Qual linguagem é a principal para criar interatividade no navegador (frontend)?</p>
 
-            <button class="btnvoltar" data-anterior="0">Voltar</button>
+            <button class="btnvoltar" data-anterior="5">Voltar</button>
+            <button class="btnproximo" data-proximo="final">A) SQL</button>
+            <button class="btnproximo" data-proximo="final">B) JavaScript</button>
+        </div>
 
-            <button class="btnproximo" data-proximo="13">A) SQL</button>
-            <button class="btnproximo" data-proximo="14">B) JavaScript</button>
+        <!-- PASSO FINAL -->
+        <div class="passo" id="passo-final">
+            <p>Parabéns! Você concluiu o Quiz.</p>
+            <button class="btnvoltar" data-anterior="6">Reiniciar Quiz</button>
         </div>
     </main>
+
     <script src="index.js"></script>
 </body>
+
 </html>
