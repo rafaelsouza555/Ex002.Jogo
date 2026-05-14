@@ -19,3 +19,17 @@ botoesProximo.forEach(botao => {
         }
     });
 });
+
+const botoesVoltar = document.querySelectorAll('.btnvoltar');
+
+botoesVoltar.forEach(botao => {
+    botao.addEventListener('click', () => {
+
+        const passoAtivo = document.querySelector('.passo_ativo');
+        const proximoPassoId = 'passo-' + botao.getAttribute('data-anterior');
+        
+        
+        passoAtivo.classList.remove('passo_ativo');
+        document.getElementById(proximoPassoId).classList.add('passo_ativo');
+    });
+});
